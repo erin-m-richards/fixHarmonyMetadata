@@ -11,9 +11,16 @@ This package is a Python script to fix the internal metadata for each exported T
 
 ______________________________________________________________________________
 
-**Inputs:**
+## Inputs:
   - Pop-up window that asks the user to select the 'hs' Archive file that was created using 'Write Archive' to export data from Harmony 5.2/5.3.
 
-**Outputs:**
+## Outputs:
   - _In place_ correction of TIF metadata (XY pixel size) for each TIF image file in each Measurement that was selected for export during the 'Write Archive' step
   - output.txt file (with the date and time in the name) with details for metadata corrections
+
+______________________________________________________________________________
+
+## Required packages
+  - Python 3.13
+  - tifffile 2026.10.15
+  - 
