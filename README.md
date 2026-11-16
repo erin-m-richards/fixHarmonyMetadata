@@ -3,16 +3,9 @@ When using 'Write Archive' to export images from the Revvity Opera Phenix and Ha
 
 <img width="5100" height="3965" alt="261116_Harmony_metadata_issues" src="https://github.com/user-attachments/assets/cae4bc5d-7dfa-417c-9a12-228205897430" />
 
-The correct metadata is in the associated index.xml file for each Measurement. 
+The correct metadata is in the associated index.xml file for each Measurement.
 
-  ⌊__ hs\
-    ⌊__ folder named with GUID\
-      ⌊__ images\
-        ⌊__ folder for each well\
-        ⌊__ image.index
-        ⌊__ index.xml (which includes the correct metadata)
-      ⌊__ index\
-      ⌊__ ...
+  hs\ → folder named for GUID\ → images\ → index.xml with metadata
 
 This package is a Python script to fix the internal metadata for each exported TIF to match that of the index.xml file. Correcting the internal metadata does not impact the ability to use 'Read Archive' in Harmony 5.2/5.3 and still keep the correct XY pixel size. Correcting the internal metadata allows ImageJ/FIJI, Imaris, and Aivia to now properly read in XY pixel size.
 
