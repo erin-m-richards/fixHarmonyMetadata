@@ -20,7 +20,36 @@ ______________________________________________________________________________
 
 ______________________________________________________________________________
 
-## Required packages
-  - Python 3.13
-  - tifffile 2026.10.15
-  - 
+## Required packages (may work with lower, but has not been tested)
+  - python 3.13 and dependencies
+  - tifffile 2026.10.15 and dependencies
+
+All packages are contained in the env.yml file.
+
+______________________________________________________________________________
+
+## Installation and Running instructions (.exe application)
+1. (Install) Download fixHarmonyMetadata.exe or install Release App_v01 to your computer.
+2. (Run) Double-click the fixHarmonyMetadata.exe application. A Terminal will open.
+  - Note: It may take up to 20 seconds between the Terminal opening and the application running.
+3. (Run) A pop-up window will appear asking you to select the 'hs' archive folder that contains your exported images.
+4. (Run) Any issues with folders will appear in the Terminal as a printed message. Otherwise, a printed message in the Terminal will tell you that all images were processed successfully.
+5. (Run) A .txt output file is generated with the details of the run (including XY pixel size before and after the fix). The location and name of the output file is given in the Terminal as a printed message.
+6. (Run) Close the Terminal by clicking on the Terminal and pressing Enter.
+
+______________________________________________________________________________
+
+## Installation instructions (conda environment and python script)
+1. (Install) Download env.yml and fixHarmonyMetadata.py or install Release Script_v01 to your computer.
+2. (Install) In Terminal, create necessary conda environment with "conda env create -f full\path\to\env.yml".
+3. (Run) Activate conda environment with "conda activate fixMetadata".
+4. (Run) Run python script with "python full\path\to\fixHarmonyMetadata.py".
+5. (Run) A pop-up window will appear asking you to select the 'hs' archive folder that contains your exported images.
+6. (Run) Any issues with folders will appear in the Terminal as a printed message. Otherwise, a printed message in the Terminal will tell you that all images were processed successfully.
+7. (Run) A .txt output file is generated with the details of the run (including XY pixel size before and after the fix). The location and name of the output file is given in the Terminal as a printed message.
+8. (Run) Close the Terminal by clicking on the Terminal and pressing Enter.
+
+_After you run Steps 1-3 above_, you can also turn this script into its own .exe application on your own computer with:
+1. Download the PyInstaller [https://pyinstaller.org/en/stable/] package with "pip install PyInstaller".
+2. Then run "pyinstaller --clean --one-file --name fixHarmonyMetadata path\to\fixHarmonyMetadata.py". It may take a while to compile.
+3. After it is complete, you can simply double-click the fixHarmonyMetadata.exe file to run the program.
