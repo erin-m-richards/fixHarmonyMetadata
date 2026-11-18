@@ -50,6 +50,6 @@ ______________________________________________________________________________
 8. (Run) Close the Terminal by clicking on the Terminal and pressing Enter.
 
 _After you run Steps 1-3 above_, you can also turn this script into its own .exe application on your own computer with:
-1. Download the PyInstaller [https://pyinstaller.org/en/stable/] package with ``pip install PyInstaller``.
-2. Then run ``pyinstaller --clean --one-file --name fixHarmonyMetadata path\to\fixHarmonyMetadata.py``. It may take a while to compile.
+1. Download the [PyInstaller](https://pyinstaller.org/en/stable/) package with `pip install PyInstaller`.
+2. Then run `pyinstaller --clean --onefile --name fixHarmonyMetadata path\to\fixHarmonyMetadata.py`. It may take a while to compile.
 3. After it is complete, you can simply double-click the fixHarmonyMetadata.exe file to run the program.
