@@ -23,13 +23,14 @@ ______________________________________________________________________________
 ## Required packages (may work with lower, but has not been tested)
   - python 3.13 and dependencies
   - tifffile 2026.10.15 and dependencies
+  - pyside6>=6.11
 
 All packages are contained in the env.yml file.
 
 ______________________________________________________________________________
 
 ## Installation and Running instructions (.exe application)
-1. (Install) Download fixHarmonyMetadata.exe or install Release App_v1.0.0 to your computer.
+1. (Install) Download fixHarmonyMetadata.exe or install the latest "App_" Release to your computer.
 2. (Run) Double-click the fixHarmonyMetadata.exe application. A Terminal will open.
   - Note: It may take up to 20 seconds between the Terminal opening and the application running.
 3. (Run) A pop-up window will appear asking you to select the 'hs' archive folder that contains your exported images.
@@ -40,8 +41,8 @@ ______________________________________________________________________________
 ______________________________________________________________________________
 
 ## Installation instructions (conda environment and python script)
-1. (Install) Download env.yml and fixHarmonyMetadata.py or install Release Script_v1.1.0 to your computer.
-2. (Install) In Terminal, create necessary conda environment with ``conda env create -f full\path\to\env.yml`` on Windows or ``conda env create -f full\path\to\env_utf8.yml`` on Mac.
+1. (Install) Download env.yml and fixHarmonyMetadata.py or install the latest "Script_" Release to your computer.
+2. (Install) In Terminal, create necessary conda environment with ``conda env create -f full\path\to\env.yml``.
 3. (Run) Activate conda environment with ``conda activate fixMetadata``.
 4. (Run) Run python script with ``python full\path\to\fixHarmonyMetadata.py``.
 5. (Run) A pop-up window will appear asking you to select the 'hs' archive folder that contains your exported images.
