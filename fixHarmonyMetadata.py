@@ -1,20 +1,77 @@
 import tkinter as tk
-from tkinter import filedialog
+from PySide6.QtWidgets import QApplication, QWidget, QGridLayout, QPushButton, QLineEdit, QLabel, QFileDialog
 import sys
 from datetime import datetime
 from tifffile import TiffFile
 from os import listdir
-from os.path import isdir, join, isfile
+from os.path import isdir, join, isfile, normpath, expanduser
 import xml.etree.ElementTree as ET
 
+# Create a little window pop-up.
+class MainWindow(QWidget):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Make dummy variable for selected folder.
+        self.selectedFolder = None
+        # Set window title for Windows users.
+        self.setWindowTitle("Select the 'hs' folder that contains your exported images.")
+        # Find size of the screen and center the window on it.
+        screen = QApplication.primaryScreen()
+        screenSize = screen.availableGeometry()
+        windowWidth = screenSize.width() * 0.3 # Make the pop-up window take up 30% of the screen width.
+        if windowWidth < 600: # ... unless its under 600 pixels, then make it 600 pixels wide.
+            windowWidth = 600
+        screenEdgeX = screenSize.x() + (screenSize.width() - windowWidth) // 2
+        screenEdgeY = screenSize.y() + (screenSize.height() - 100) // 2
+        self.setGeometry(screenEdgeX, screenEdgeY, windowWidth, 100)
+
+        # Set up the layout of the pop-up window.
+        layout = QGridLayout()
+        self.setLayout(layout)
+        # Add a button to select the folder and a text box to display the selected folder path.
+        dirButton = QPushButton("Browse...")
+        dirButton.clicked.connect(self.openFileDialog)
+        self.dirNameEdit = QLineEdit()
+        # Populate the layout of the pop-up window.
+        layout.addWidget(QLabel('Folder:'), 1, 0)
+        layout.addWidget(self.dirNameEdit, 1, 1)
+        layout.addWidget(dirButton, 1, 2)
+
+        # Show the pop-up window.
+        self.show()
+
+    # Define what happens when the user clicks the "Browse..." button.
+    def openFileDialog(self):
+        # Find the user's Downloads folder to use as the starting directory for the file dialog.
+        startDir = expanduser("~") + "/Downloads"
+        startDir = normpath(startDir)
+        # Open the file dialog.
+        folder = QFileDialog.getExistingDirectory(self, "Select the 'hs' folder that contains your exported images.", startDir)
+        if folder: # If the user selected a folder...
+            # Set a variable outside of the pop-up that can be used in the main function to get the selected folder path.
+            self.selectedFolder = folder
+            # Show the selected folder in the text box in the pop-up window.
+            self.dirNameEdit.setText(str(folder))
+            # Close the pop-up window.
+            self.close()
+
+# Make main function to run the script.
 def main():
     try:
         # Allow user to specify the folder with the images.
-        root = tk.Tk()
-        root.withdraw()
         print("\nNote: The selection window may be hidden behind other windows.\n")
         print("Select the 'hs' folder that contains your exported images.\n")
-        hsFolder = filedialog.askdirectory(title="Select the 'hs' folder that contains your exported images.")
+
+        app = QApplication(sys.argv)
+        popUp = MainWindow()
+        popUp.show()
+        app.exec()
+
+        if popUp.selectedFolder:
+            hsFolder = normpath(popUp.selectedFolder)
+        else: 
+            print("No folder selected.\n")
+            sys.exit(0)
 
         failedList = []
 

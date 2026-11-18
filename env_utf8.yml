@@ -6,3 +6,4 @@ dependencies:
   - python=3.13.*
   - pip:
     - tifffile>=2026.10.15
+    - pyside6>=6.11
