@@ -40,7 +40,7 @@ ______________________________________________________________________________
 ______________________________________________________________________________
 
 ## Installation instructions (conda environment and python script)
-1. (Install) Download env.yml and fixHarmonyMetadata.py or install Release Script_v1.0.1 to your computer.
+1. (Install) Download env.yml and fixHarmonyMetadata.py or install Release Script_v1.1.0 to your computer.
 2. (Install) In Terminal, create necessary conda environment with ``conda env create -f full\path\to\env.yml`` on Windows or ``conda env create -f full\path\to\env_utf8.yml`` on Mac.
 3. (Run) Activate conda environment with ``conda activate fixMetadata``.
 4. (Run) Run python script with ``python full\path\to\fixHarmonyMetadata.py``.
