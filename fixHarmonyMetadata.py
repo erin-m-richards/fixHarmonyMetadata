@@ -13,6 +13,7 @@ def main():
         root = tk.Tk()
         root.withdraw()
         print("\nNote: The selection window may be hidden behind other windows.\n")
+        print("Select the 'hs' folder that contains your exported images.\n")
         hsFolder = filedialog.askdirectory(title="Select the 'hs' folder that contains your exported images.")
 
         failedList = []
