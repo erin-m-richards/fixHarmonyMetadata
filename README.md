@@ -42,7 +42,7 @@ ______________________________________________________________________________
 
 ## Installation instructions (conda environment and python script)
 1. (Install) Download env.yml and fixHarmonyMetadata.py or install the latest "Script_" Release to your computer.
-2. (Install) In Terminal, create necessary conda environment with ``conda env create -f full\path\to\env.yml`` on Windows or ``conda env create -f full\path\to\env_utf8.yml`` on Mac.
+2. (Install) In Terminal, create necessary conda environment with ``conda env create -f full\path\to\env.yml``.
 3. (Run) Activate conda environment with ``conda activate fixMetadata``.
 4. (Run) Run python script with ``python full\path\to\fixHarmonyMetadata.py``.
 5. (Run) A pop-up window will appear asking you to select the 'hs' archive folder that contains your exported images.
